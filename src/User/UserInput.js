@@ -1,9 +1,7 @@
 import React from 'react';
 
 const userInput = () => {
-  return (
-    <div></div>
-  );
+  return <input type="text" />;
 };
 
 export default userInput;
