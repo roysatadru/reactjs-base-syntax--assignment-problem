@@ -20,9 +20,9 @@ class App extends Component {
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
 
-        <UserOutput />
-        <UserOutput />
-        <UserOutput />
+        <UserOutput name="Srabanti" age='43' />
+        <UserOutput name="Santanu" age='44' />
+        <UserOutput name="Srijita" age='20' />
       </div>
     );
   }
