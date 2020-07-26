@@ -12,6 +12,16 @@ class App extends Component {
     ]
   };
 
+  changeUserNameHandler = () => {
+    this.setState({
+      users: [
+        {userName: 'Srabanti', age: 43},
+        {userName: 'Santanu', age: 44},
+        {userName: 'Satadru', age: 22}
+      ]
+    });
+  };
+
   render() {
     return (
       <div className="App">
@@ -30,7 +40,10 @@ class App extends Component {
 
         <UserOutput name={this.state.users[0].userName} age={this.state.users[0].age} />
         <UserOutput name={this.state.users[1].userName} age={this.state.users[1].age} />
-        <UserOutput name={this.state.users[2].userName} age={this.state.users[2].age} />
+        <UserOutput
+          name={this.state.users[2].userName}
+          age={this.state.users[2].age}
+          click={this.changeUserNameHandler} />
       </div>
     );
   }
