@@ -12,12 +12,12 @@ class App extends Component {
     ]
   };
 
-  changeUserNameHandler = () => {
+  changeUserNameHandler = event => {
     this.setState({
       users: [
         {userName: 'Srabanti', age: 43},
         {userName: 'Santanu', age: 44},
-        {userName: 'Satadru', age: 22}
+        {userName: event.target.value, age: 20}
       ]
     });
   };
@@ -38,12 +38,10 @@ class App extends Component {
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
 
+        <UserInput change={this.changeUserNameHandler} />
         <UserOutput name={this.state.users[0].userName} age={this.state.users[0].age} />
         <UserOutput name={this.state.users[1].userName} age={this.state.users[1].age} />
-        <UserOutput
-          name={this.state.users[2].userName}
-          age={this.state.users[2].age}
-          click={this.changeUserNameHandler} />
+        <UserOutput name={this.state.users[2].userName} age={this.state.users[2].age} />
       </div>
     );
   }
