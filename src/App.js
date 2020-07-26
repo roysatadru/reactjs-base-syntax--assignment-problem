@@ -38,9 +38,10 @@ class App extends Component {
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
 
-        <UserInput change={this.changeUserNameHandler} />
         <UserOutput name={this.state.users[0].userName} age={this.state.users[0].age} />
         <UserOutput name={this.state.users[1].userName} age={this.state.users[1].age} />
+
+        <UserInput name={this.state.users[2].userName} change={this.changeUserNameHandler} />
         <UserOutput name={this.state.users[2].userName} age={this.state.users[2].age} />
       </div>
     );
