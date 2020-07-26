@@ -1,25 +1,16 @@
 import React, { Component } from 'react';
 import './App.css';
-import UserInput from './User/UserInput';
-import UserOutput from './User/UserOutput';
+
+import UserInput from './UserInput/UserInput';
+import UserOutput from './UserOutput/UserOutput';
 
 class App extends Component {
   state = {
-    users: [
-      {userName: 'Srabanti', age: 43},
-      {userName: 'Santanu', age: 44},
-      {userName: 'Srijita', age: 20}
-    ]
+    username: 'supermax'
   };
 
-  changeUserNameHandler = event => {
-    this.setState({
-      users: [
-        {userName: 'Srabanti', age: 43},
-        {userName: 'Santanu', age: 44},
-        {userName: event.target.value, age: 20}
-      ]
-    });
+  usernameChangedHandler = (event) => {
+    this.setState({username: event.target.value});
   };
 
   render() {
@@ -38,11 +29,12 @@ class App extends Component {
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
 
-        <UserOutput name={this.state.users[0].userName} age={this.state.users[0].age} />
-        <UserOutput name={this.state.users[1].userName} age={this.state.users[1].age} />
-
-        <UserOutput name={this.state.users[2].userName} age={this.state.users[2].age} />
-        <UserInput name={this.state.users[2].userName} change={this.changeUserNameHandler} />
+        <UserInput
+          changed={this.usernameChangedHandler}
+          currentName={this.state.username} />
+        <UserOutput userName={this.state.username} />
+        <UserOutput userName={this.state.username} />
+        <UserOutput userName="Max" />
       </div>
     );
   }
