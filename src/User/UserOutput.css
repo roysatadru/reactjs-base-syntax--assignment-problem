@@ -1,0 +1,15 @@
+.UserOutput {
+  display: block;
+  width: 60%;
+  margin: 32px auto;
+  padding: 5vw 10%;
+  text-align: center;
+  border: 1px solid #ccc;
+  box-shadow: 0 10px 5px #ddd;
+}
+
+.UserOutput > * {
+  width: 33%;
+  display: inline-block;
+  padding: 0 2%;
+}
