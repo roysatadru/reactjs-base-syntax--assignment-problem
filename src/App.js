@@ -4,6 +4,14 @@ import UserInput from './User/UserInput';
 import UserOutput from './User/UserOutput';
 
 class App extends Component {
+  state = {
+    users: [
+      {userName: 'Srabanti', age: 43},
+      {userName: 'Santanu', age: 44},
+      {userName: 'Srijita', age: 20}
+    ]
+  };
+
   render() {
     return (
       <div className="App">
@@ -20,9 +28,9 @@ class App extends Component {
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
 
-        <UserOutput name="Srabanti" age='43' />
-        <UserOutput name="Santanu" age='44' />
-        <UserOutput name="Srijita" age='20' />
+        <UserOutput name={this.state.users[0].userName} age={this.state.users[0].age} />
+        <UserOutput name={this.state.users[1].userName} age={this.state.users[1].age} />
+        <UserOutput name={this.state.users[2].userName} age={this.state.users[2].age} />
       </div>
     );
   }
